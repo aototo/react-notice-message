@@ -8,7 +8,7 @@ a simple and free messages notice with and for [React](http://facebook.github.io
 
 ## Demo & Examples
 
-Live demo: [jedwatson.github.io/react-select](http://jedwatson.github.io/react-select/)
+Live demo: [asd0102433.github.io/react-notice-message/example](https://asd0102433.github.io/react-notice-message/example/)
 
 The live demo is still running `v1.0.5`.
 
