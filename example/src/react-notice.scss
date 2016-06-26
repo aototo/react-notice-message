@@ -1,0 +1,50 @@
+
+.notice-container{
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+
+.notice-container .notice-box{
+  padding: 10px 25px;
+  margin-bottom: 10px;
+  width: 100px;
+  border-radius: 4px;
+  background: rgba(3, 125, 107, 0.61);
+  position: relative;
+  opacity: 0;
+  .close{
+    cursor:pointer;
+    position: absolute;
+    right: 5px;
+    top: 2px;
+    background: none;
+    border: 0px;
+    color: #fff;
+  }
+
+  &.active{
+    -webkit-animation: bounceInRight 0.5s forwards;
+    -ms-animation: bounceInRight 0.5s forwards;
+    -moz-animation: bounceInRight 0.5s forwards;
+  }
+}
+
+@keyframes bounceInRight {
+  0%, 100%, 60%, 75%, 90% {
+    -webkit-transition-timing-function: cubic-bezier(0.215, .61, .355, 1);
+    transition-timing-function: cubic-bezier(0.215, .61, .355, 1)
+  }
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(30px, 0, 0);
+    -ms-transform: translate3d(30px, 0, 0);
+    transform: translate3d(30px, 0, 0)
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none
+  }
+}
