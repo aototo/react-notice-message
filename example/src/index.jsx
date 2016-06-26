@@ -17,7 +17,7 @@ class Main extends Component {
 
   click(time) {
     this.number++;
-    reactNotice.show(<a className="das" href="http://www.baidu1.com" style = {{color:"#ffffff"}}><span>{this.number}</span>12312123</a>,{closeTime:time})
+    reactNotice.show(<a className="das" href="http://www.baidu1.com" style = {{color:"#ffffff"}}>messages({this.number})</a>,{closeTime:time})
   }
 
   showMessage() {

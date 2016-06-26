@@ -93,12 +93,9 @@
 	      _reactNotice2.default.show(_react2.default.createElement(
 	        'a',
 	        { className: 'das', href: 'http://www.baidu1.com', style: { color: "#ffffff" } },
-	        _react2.default.createElement(
-	          'span',
-	          null,
-	          this.number
-	        ),
-	        '12312123'
+	        'messages(',
+	        this.number,
+	        ')'
 	      ), { closeTime: time });
 	    }
 	  }, {
