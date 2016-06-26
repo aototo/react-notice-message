@@ -20,7 +20,7 @@ npm start
 
 ```
 
-Then open [`localhost:8000`](http://localhost:8000) in a browser.
+Then open [`localhost:8080`](http://localhost:8080) in a browser.
 或者直接 open example/index.html
 
 ## Installation
@@ -34,7 +34,7 @@ At this point you can import react-notice-message and its styles in your applica
 ```js
 import reactNotice from 'react-notice-message';
 
-// Be sure to include styles at some point, probably during your bootstrapping(you can modify css in the react-notice.css or Write one other css style)
+// you can modify css in the react-notice.css or Write one other css style , because the css is simple and crude.
 import 'react-select/react-notice.css';
 ```
 
