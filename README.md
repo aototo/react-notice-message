@@ -10,7 +10,7 @@ a simple and free messages notice with and for [React](http://facebook.github.io
 
 Live demo: [asd0102433.github.io/react-notice-message/example](https://asd0102433.github.io/react-notice-message/example/)
 
-The live demo is still running `v1.0.5`.
+The live demo is still running `v1.0.8`.
 
 To build the **new 1.0.0** examples locally, clone this repo then run:
 
@@ -46,7 +46,7 @@ import 'react-select/react-notice.css';
 var reactNotice = require('react-notice-message');
 
 //reactNotice.show(document, {closeTime:"3000"});
-reactNotice.show(document, options); //Value: 3000 or infinite
+reactNotice.show(<p>messages</p>, options); //Value: 3000 or infinite
 reactNotice.getHistoryMessages();
 ```
 
