@@ -67,14 +67,17 @@ class Item extends Component {
       <div className = {className}>
         <a className="close" title="close" onClick = {this.removeMessage}>x</a>
         { this.props.content }
+
       </div>
     )
   }
+
 
 }
 
 class Notice extends Component {
   componentDidMount() {
+    console.log(this.props);
   }
   //
   render() {
@@ -88,8 +91,17 @@ class Notice extends Component {
       )
     })
 
+    let className = classnames(
+      "notice-container",
+      {
+        active: this.props.active,
+        "notice-slideDown-leave": !this.props.active
+      }
+    )
+
     return (
-      <div className = "notice-container">
+      <div className = {className } >
+        <div className = "notice-mask"></div>
         { items }
       </div>
     )
@@ -99,12 +111,12 @@ class Notice extends Component {
 PubSub.subscribe(ADD_MESSAGE, (topic, data) => {
   noticesMessages = [...noticesMessages, data];
 
-  renderNotice();
+  renderNotice(true);
 });
 
 var remove_notice = PubSub.subscribe(REMOVE_MESSAGE, (topic, data) => {
   let { index } = data;
-  
+
   if (!noticesMessages[index]) {
     return false;
   }
@@ -113,7 +125,7 @@ var remove_notice = PubSub.subscribe(REMOVE_MESSAGE, (topic, data) => {
   historyMessages.push(historyMessage);
   noticesMessages.splice(index, 1,"");
 
-  renderNotice();
+  renderNotice(false);
 });
 
 Notice.getHistoryMessages = function() {
@@ -146,8 +158,8 @@ Notice.show = function(content, param) {
 }
 
 
-function renderNotice() {
-  containerElement = ReactDOM.render(<Notice notices={noticesMessages} />,
+function renderNotice(active) {
+  containerElement = ReactDOM.render(<Notice active = {active} notices={noticesMessages} />,
     containerDOM
   );
 }

@@ -17,7 +17,10 @@ class Main extends Component {
 
   click(time) {
     this.number++;
-    reactNotice.show(<a className="das" href="http://www.baidu1.com" style = {{color:"#ffffff"}}><span>{this.number}</span>12312123</a>,{closeTime:time})
+    reactNotice.show(
+      <div>这是内容</div>,
+      {closeTime:time}
+    )
   }
 
   showMessage() {
@@ -27,7 +30,7 @@ class Main extends Component {
   render() {
       return(
         <div className = "main">
-          <button onClick = {() => {this.click(3000)}}>弹出</button>
+          <button onClick = {() => {this.click(2000)}}>弹出</button>
           <button onClick = {() => {this.click("infinite")}}>弹出 时间infinite</button>
           <button onClick = {this.showMessage.bind(this)}>历史记录</button>
         </div>

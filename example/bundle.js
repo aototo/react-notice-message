@@ -91,14 +91,9 @@
 	    value: function click(time) {
 	      this.number++;
 	      _reactNotice2.default.show(_react2.default.createElement(
-	        'a',
-	        { className: 'das', href: 'http://www.baidu1.com', style: { color: "#ffffff" } },
-	        _react2.default.createElement(
-	          'span',
-	          null,
-	          this.number
-	        ),
-	        '12312123'
+	        'div',
+	        null,
+	        '这是内容'
 	      ), { closeTime: time });
 	    }
 	  }, {
@@ -117,7 +112,7 @@
 	        _react2.default.createElement(
 	          'button',
 	          { onClick: function onClick() {
-	              _this2.click(3000);
+	              _this2.click(2000);
 	            } },
 	          '弹出'
 	        ),
@@ -26143,7 +26138,9 @@
 
 	  _createClass(Notice, [{
 	    key: 'componentDidMount',
-	    value: function componentDidMount() {}
+	    value: function componentDidMount() {
+	      console.log(this.props);
+	    }
 	    //
 
 	  }, {
@@ -26157,9 +26154,15 @@
 	        return _react2.default.createElement(Item, _extends({ key: i, index: i, ref: i }, msg));
 	      });
 
+	      var className = (0, _classnames2.default)("notice-container", {
+	        active: this.props.active,
+	        "notice-slideDown-leave": !this.props.active
+	      });
+
 	      return _react2.default.createElement(
 	        'div',
-	        { className: 'notice-container' },
+	        { className: className },
+	        _react2.default.createElement('div', { className: 'notice-mask' }),
 	        items
 	      );
 	    }
@@ -26171,7 +26174,7 @@
 	_pubsubJs2.default.subscribe(ADD_MESSAGE, function (topic, data) {
 	  noticesMessages = [].concat(_toConsumableArray(noticesMessages), [data]);
 
-	  renderNotice();
+	  renderNotice(true);
 	});
 
 	var remove_notice = _pubsubJs2.default.subscribe(REMOVE_MESSAGE, function (topic, data) {
@@ -26186,7 +26189,7 @@
 	  historyMessages.push(historyMessage);
 	  noticesMessages.splice(index, 1, "");
 
-	  renderNotice();
+	  renderNotice(false);
 	});
 
 	Notice.getHistoryMessages = function () {
@@ -26217,8 +26220,8 @@
 	  return containerElement;
 	};
 
-	function renderNotice() {
-	  containerElement = _reactDom2.default.render(_react2.default.createElement(Notice, { notices: noticesMessages }), containerDOM);
+	function renderNotice(active) {
+	  containerElement = _reactDom2.default.render(_react2.default.createElement(Notice, { active: active, notices: noticesMessages }), containerDOM);
 	}
 
 	module.exports = Notice;
