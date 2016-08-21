@@ -32,7 +32,7 @@ npm install react-notice-message --save
 At this point you can import react-notice-message and its styles in your application as follows:
 
 ```js
-import reactNotice from 'react-notice-message';
+import react-notice-message from 'react-notice-message';
 
 // you can modify css in the react-notice.css or Write one other css style , because the css is simple and crude.
 import 'react-select/react-notice.css';
